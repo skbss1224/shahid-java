@@ -1,0 +1,49 @@
+  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Validations basic</title>
+<script type="text/javascript">
+function valid()
+{
+	var a=document.forms['sasi'].pass.value;
+	var b=document.forms['sasi'].conpass.value;
+	var reg=/^(?=.*[0-9])(?=.*[!@#$%])[a-zA-Z0-9!@#$%]{8,}$/;
+	//alert('data gonna validate');
+	//alert(!reg.test(a));
+	
+	// field/ form validation
+		// data validation
+		if(!(reg.test(a)||reg.test(b)))
+		{
+			alert("Password should contain alpha,numeric and special chars also length should be 8");
+			return false;
+		}
+		else
+		{
+			if(a!=b)
+			{
+				alert("Password mismatch");
+				return false;
+			}
+			else
+			{
+				return true;
+				
+			}
+		}
+	document.forms['sasi'].pass.value="";
+	document.forms['sasi'].conpass.value="";
+}
+</script>
+</head>
+<body>
+<form name="sasi" onsubmit="return valid()" action="carousel.html">
+	<input type="password" name="pass">
+	<input type="password" name="conpass">
+	<!-- <input type="button" onclick="valid()" value="validate"> -->
+	<input type="submit" value="open">
+</form>
+</body>
+</html>
