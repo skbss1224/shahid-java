@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function hello(){
+            alert("im called")
+        }
+
+        const read=()=>{
+            var yet=document.getElementById('one')
+            //alert(yet.type+" "+yet.placeholder+" "+yet.value+" "+yet.id)
+            let hi=yet.value-(yet.value*0.100)
+            document.getElementById('result').value=hi
+            //document.getElementById('one').value=hi
+        }
+
+        window.onload=hello
+    </script>
+</head>
+<body>
+    <input type="text" id="one" placeholder="Enter the total commericial"/>
+    <button onclick="read()">Find Take Home</button>
+    <output id="result"></output>
+</body>
+</html>
